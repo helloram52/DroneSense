@@ -11,7 +11,7 @@ function OpenConnection()
     {
         $serverName = "tcp:djdux8m8ie.database.windows.net,1433";
         $connectionOptions = array("Database"=>"DroneSense_db",
-            "UID"=>"DroneSense@djdux8m8ie", "PWD"=>"Micro\$oft");
+            "UID"=>"DroneSense@djdux8m8ie", "PWD"=>"Micro\$of");
         $conn = sqlsrv_connect($serverName, $connectionOptions);
         if($conn == false){
             die(FormatErrors(sqlsrv_errors()));
