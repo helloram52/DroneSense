@@ -9,9 +9,8 @@ function OpenConnection()
 {
     try
     {
-        echo ("Opening connection");
         $serverName = "djdux8m8ie.database.windows.net,1433";
-        $connectionOptions = array("Database"=>"DroneSense_db",
+        $connectionOptions = array("Database"=>"dronesense_db",
             "Uid"=>"DroneSense", "PWD"=>"Micro$oft");
         $conn = sqlsrv_connect($serverName, $connectionOptions);
         if($conn == false){
