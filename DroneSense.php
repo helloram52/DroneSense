@@ -28,11 +28,15 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT Humid,TempF,Gas_Sensor,__createdAt FROM (SELECT * FROM DroneSense.Data ORDER BY __createdAt DESC LIMIT 20) ORDER BY __createdAt ASC";
+        $tsql = "SELECT Humid,TempF,Gas_Sensor,__createdAt FROM (SELECT Humid,TempF,Gas_Sensor,__createdAt FROM DroneSense.Data ORDER BY __createdAt DESC LIMIT 20) ORDER BY __createdAt ASC";
         $getProducts = sqlsrv_query($conn, $tsql);
-        if ($getProducts == FALSE)
+        echo ("After the query execution");
+        if ($getProducts == FALSE){
+            echo ("Failed");
             die(FormatErrors(sqlsrv_errors()));
+        }
         $productCount = 0;
+
         while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
         {
             echo($row['Humid']);
@@ -55,7 +59,7 @@ ReadData();
 
 ?>
     Hey, Its working!!
-    
+
 </body>
 
 </html>
