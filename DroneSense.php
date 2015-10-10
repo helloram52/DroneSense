@@ -3,8 +3,6 @@
     <title>new page...</title>
 </head>
 <body>
-<?
-
 <?php
 // DB connection info
 
