@@ -1,0 +1,88 @@
+.nav {
+  text-align: center;
+}
+
+.nav a {
+  color: #E6E6E6;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 14px 20px;
+  font-style: normal;
+  font-family: 'Shift', sans-serif;
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+  list-style-type: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #DC143C;
+}
+
+.nav li {
+  display: inline-block;
+  list-style-type: circle;
+}
+
+.nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.jumbotron {
+  height: 500px;
+}
+
+.jumbotron h1 {
+  color: #E6E6E6;
+  font-size: 48px;
+  font-family: 'Shift', sans-serif;
+  text-align: center;
+
+}
+
+body {
+  background-color: #191919;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.jumbotron hr {
+  color: #grey;
+  font-weight: bolder;
+}
+
+.dataPoints {
+  padding-left: 10px;
+}
+
+.dataPoints h3 {
+  color: #DC143C;
+}
+
+.Preliminary_Information {
+  color: grey;
+  font-style: oblique;
+  padding-left: 15px;
+}
+
+.Preliminary_Information b {
+  color: white;
+  font-style: normal;
+}
+
+.formStuff {
+  color: white;
+  font-style: normal;
+  padding-left: 15px;
+}
+
+.footer p {
+  color: grey;
+  font-size: 12px;
+  padding-left: 10px;
+}
