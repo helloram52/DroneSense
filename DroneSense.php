@@ -7,7 +7,7 @@
 // DB connection info
 
 echo $_SERVER['SERVER_ADDR'];
-echo "hi";;
+echo "hi";
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
