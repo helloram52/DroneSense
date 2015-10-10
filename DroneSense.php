@@ -7,7 +7,6 @@
 // DB connection info
 
 echo("hi");
-
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
 $user = "DroneSense";
 $pwd = "Micro\$oft";
@@ -22,9 +21,7 @@ catch(Exception $e){
 
 $sql_select = "SELECT * FROM DroneSense.Data";
 $stmt = $conn->query($sql_select);
-$result = $stmt->fetchAll()
-echo $result;
-print_r($result);
+$result = $stmt->fetchAll();
 
 ?>
     Hey, Its working!!
