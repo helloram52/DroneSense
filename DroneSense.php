@@ -8,7 +8,7 @@
 
 echo("hi");
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
-$user = "DroneSense";
+$user = "DroneSense@djdux8m8ie";
 $pwd = "Micro\$oft";
 $db = "DroneSense_db";
 try{
