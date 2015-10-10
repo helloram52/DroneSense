@@ -25,7 +25,7 @@ catch(Exception $e){
 
 $sql_select = "SELECT * FROM DroneSense.Data";
 $stmt = $conn->query($sql_select);
-while($row = mysql_fetch_assoc($stmt->fetchAll())) // loop to give you the data in an associative array so you can use it however.
+while($row = mysql_fetch_array($stmt->fetchAll())) // loop to give you the data in an associative array so you can use it however.
 {
      echo($row);
 }
