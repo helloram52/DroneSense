@@ -32,6 +32,7 @@ function ReadData()
         //$tsql = "SELECT [Humid],[TempF],[Gas_Sensor],[__createdAt] FROM DroneSense.Data;";    
         $getProducts = sqlsrv_query($conn, $tsql);
         echo ("After the query execution");
+        echo $getProducts;
         if ($getProducts == FALSE){
             sqlsrv_free_stmt($getProducts);
             sqlsrv_close($conn);    
