@@ -6,7 +6,7 @@
 <?php
 // DB connection info
 
-echo "hi";
+echo("hi");
 
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
 $user = "DroneSense";
