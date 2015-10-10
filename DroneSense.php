@@ -32,6 +32,8 @@ function ReadData()
         $getProducts = sqlsrv_query($conn, $tsql);
         echo ("After the query execution");
         if ($getProducts == FALSE){
+            sqlsrv_free_stmt($getProducts);
+            sqlsrv_close($conn);    
             echo ("Failed");
             die(FormatErrors(sqlsrv_errors()));
         }
