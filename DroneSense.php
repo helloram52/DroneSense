@@ -5,6 +5,7 @@
 <body>
 <?
 
+
 function OpenConnection()
 {
     try
@@ -28,6 +29,8 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
+        echo $_SERVER['SERVER_ADDR'];
+        echo $conn;
         $tsql = "SELECT * FROM DroneSense.Data";
         //$tsql = "SELECT [Humid],[TempF],[Gas_Sensor],[__createdAt] FROM DroneSense.Data;";    
         $getProducts = sqlsrv_query($conn, $tsql);
