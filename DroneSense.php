@@ -1,5 +1,8 @@
 <html>
-
+<head>
+    <title>new page...</title>
+</head>
+<body>
 <?
 
 function OpenConnection()
@@ -49,7 +52,7 @@ function ReadData()
 ReadData();
 
 ?>
-<body>
     Hey, Its working!!
 </body>
+
 </html>
