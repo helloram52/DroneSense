@@ -1,4 +1,7 @@
+<html>
+
 <?
+
 function OpenConnection()
 {
     try
@@ -21,7 +24,7 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT Humid,TempC FROM DroneSense.";
+        $tsql = "SELECT Humid,TempC,Gas_Sensor FROM DroneSense.Data";
         $getProducts = sqlsrv_query($conn, $tsql);
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
@@ -30,6 +33,7 @@ function ReadData()
         {
             echo($row['Humid']);
             echo($row['TempC']);
+            echo($row['Gas_Sensor']);
             echo("<br/>");
             $productCount++;
         }
@@ -42,4 +46,10 @@ function ReadData()
     }
 }
 
+ReadData();
+
 ?>
+<body>
+    Hey, Its working!!
+</body>
+</html>
