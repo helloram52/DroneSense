@@ -22,7 +22,7 @@ catch(Exception $e){
 $sql_select = "SELECT * FROM DroneSense.Data";
 $stmt = $conn->query($sql_select);
 $result = $stmt->fetchAll();
-
+echo $result;
 ?>
     Hey, Its working!!
 
