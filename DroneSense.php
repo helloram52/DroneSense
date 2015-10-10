@@ -14,7 +14,6 @@ function OpenConnection()
             "Uid"=>"DroneSense", "PWD"=>"Micro\$oft");
         $conn = sqlsrv_connect($serverName, $connectionOptions);
         if($conn == false){
-            echo ("Connection unsuccessful!");
             die(FormatErrors(sqlsrv_errors()));
         }
     }
@@ -29,17 +28,17 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT Humid,TempC,Gas_Sensor FROM DroneSense.Data";
+        $tsql = "SELECT Humid,TempF,Gas_Sensor,__createdAt FROM (SELECT * FROM DroneSense.Data ORDER BY __createdAt DESC LIMIT 20) ORDER BY __createdAt ASC";
         $getProducts = sqlsrv_query($conn, $tsql);
-        echo("after query execution");
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
         while($row = sqlsrv_fetch_array($getProducts, SQLSRV_FETCH_ASSOC))
         {
             echo($row['Humid']);
-            echo($row['TempC']);
+            echo($row['TempF']);
             echo($row['Gas_Sensor']);
+            echo($row['__createdAt']);
             echo("<br/>");
             $productCount++;
         }
