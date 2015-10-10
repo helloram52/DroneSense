@@ -9,12 +9,15 @@ function OpenConnection()
 {
     try
     {
+        echo ("Opening connection");
         $serverName = "djdux8m8ie.database.windows.net,1433";
         $connectionOptions = array("Database"=>"DroneSense_db",
             "Uid"=>"DroneSense", "PWD"=>"Micro$oft");
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-        if($conn == false)
+        if($conn == false){
+            echo ("Connection unsuccessful!");
             die(FormatErrors(sqlsrv_errors()));
+        }
     }
     catch(Exception $e)
     {
@@ -29,6 +32,7 @@ function ReadData()
         $conn = OpenConnection();
         $tsql = "SELECT Humid,TempC,Gas_Sensor FROM DroneSense.Data";
         $getProducts = sqlsrv_query($conn, $tsql);
+        echo("after query execution");
         if ($getProducts == FALSE)
             die(FormatErrors(sqlsrv_errors()));
         $productCount = 0;
