@@ -6,9 +6,13 @@
 <?php
 // DB connection info
 
-echo("hi");
+echo $_SERVER['SERVER_ADDR'];
+echo "hi";
+error_reporting(-1);
+ini_set('display_errors', 'On');
+
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
-$user = "DroneSense@djdux8m8ie";
+$user = "DroneSense";
 $pwd = "Micro\$oft";
 $db = "DroneSense_db";
 try{
@@ -22,7 +26,10 @@ catch(Exception $e){
 $sql_select = "SELECT * FROM DroneSense.Data";
 $stmt = $conn->query($sql_select);
 $result = $stmt->fetchAll();
-print_r($result);
+while($row = mysql_fetch_assoc($result)) // loop to give you the data in an associative array so you can use it however.
+{
+     echo($row);
+}
 ?>
     Hey, Its working!!
 
