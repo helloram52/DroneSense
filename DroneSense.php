@@ -28,7 +28,7 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT Humid,TempF,Gas_Sensor,__createdAt FROM DroneSense.Data ORDER BY __createdAt DESC";    
+        $tsql = "SELECT Humid,TempF,Gas_Sensor,__createdAt FROM DroneSense.Data ORDER BY __createdAt DESC;";    
         $getProducts = sqlsrv_query($conn, $tsql);
         echo ("After the query execution");
         if ($getProducts == FALSE){
