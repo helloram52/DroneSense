@@ -9,7 +9,7 @@ function OpenConnection()
 {
     try
     {
-        $serverName = "djdux8m8ie.database.windows.net,1433";
+        $serverName = "tcp:djdux8m8ie.database.windows.net,1433";
         $connectionOptions = array("Database"=>"DroneSense_db",
             "UID"=>"DroneSense@djdux8m8ie", "PWD"=>"Micro\$oft");
         $conn = sqlsrv_connect($serverName, $connectionOptions);
@@ -28,7 +28,7 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT [Humid] FROM Data";
+        $tsql = "SELECT [Humid] FROM DroneSense.Data";
         //$tsql = "SELECT [Humid],[TempF],[Gas_Sensor],[__createdAt] FROM DroneSense.Data;";    
         $getProducts = sqlsrv_query($conn, $tsql);
         echo ("After the query execution");
