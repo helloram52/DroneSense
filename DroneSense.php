@@ -6,10 +6,7 @@
 <?php
 // DB connection info
 
-echo $_SERVER['SERVER_ADDR'];
 echo "hi";
-error_reporting(-1);
-ini_set('display_errors', 'On');
 
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
 $user = "DroneSense";
