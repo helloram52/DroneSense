@@ -28,7 +28,7 @@ function ReadData()
     try
     {
         $conn = OpenConnection();
-        $tsql = "SELECT [Humid] FROM DroneSense.Data";
+        $tsql = "SELECT [Humid] FROM Data";
         //$tsql = "SELECT [Humid],[TempF],[Gas_Sensor],[__createdAt] FROM DroneSense.Data;";    
         $getProducts = sqlsrv_query($conn, $tsql);
         echo ("After the query execution");
