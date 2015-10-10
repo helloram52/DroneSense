@@ -7,14 +7,14 @@
 // DB connection info
 
 echo $_SERVER['SERVER_ADDR'];
-echo "hi";
+echo "hi";;
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
 $host = "tcp:djdux8m8ie.database.windows.net,1433";
 $user = "DroneSense";
 $pwd = "Micro\$oft";
-$db = "DroneSense_db";o
+$db = "DroneSense_db";
 try{
     $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
